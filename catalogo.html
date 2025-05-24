@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio - Catálogo</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome (íconos) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --light-color: #ecf0f1;
+            --dark-color: #34495e;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--light-color);
+            color: var(--dark-color);
+        }
+        .navbar {
+            background-color: var(--secondary-color) !important;
+        }
+        .navbar-brand, .nav-link {
+            color: white !important;
+        }
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://via.placeholder.com/1920x600');
+            background-size: cover;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        .card {
+            transition: transform 0.3s;
+            margin-bottom: 20px;
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+        .card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 30px 0;
+        }
+        .catalog-card {
+            height: 100%;
+        }
+        .pdf-container {
+            width: 100%;
+            height: 75vh;
+            border: none;
+            display: none;
+        }
+        .modal-pdf {
+            max-width: 90%;
+        }
+        .triangle-icon {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        .card-img-top {
+            height: 180px;
+            object-fit: cover;
+            background-color: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar con Menú Hamburguesa -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Mi Portafolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="acerca.html">Acerca de</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="catalogo.html">Catálogo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="recursos.html">Recursos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="display-4">Catálogo de Tareas</h1>
+            <p class="lead">Explora mis trabajos y proyectos realizados</p>
+        </div>
+    </section>
+
+    <!-- Contenido específico para Catálogo -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                <!-- Tarjeta 1 - Triángulos (PDF t1.pdf) -->
+                <div class="col">
+                    <div class="card catalog-card">
+                        <div class="card-img-top">
+                            <i class="fas fa-shapes triangle-icon"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Tarea 1 - Tipos de Triángulos</h5>
+                            <p class="card-text">Análisis de condiciones para determinar si un triángulo es equilátero, isósceles o escaleno.</p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#pdfModal" data-pdf="t1.pdf">
+                                <i class="fas fa-eye me-2"></i>Ver Tarea
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tarjeta 2 -->
+                <div class="col">
+                    <div class="card catalog-card">
+                        <div class="card-img-top" style="background-color: #e3f2fd; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-laptop-code" style="font-size: 3rem; color: #2196f3;"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Tarea 2 - Tecnología en el Aula</h5>
+                            <p class="card-text">Análisis del impacto de la tecnología digital en la educación moderna.</p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#pdfModal" data-pdf="t2.pdf">
+                                <i class="fas fa-eye me-2"></i>Ver Tarea
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tarjeta 3 - Triángulos (PDF t1.pdf) -->
+                <div class="col">
+                    <div class="card catalog-card">
+                        <div class="card-img-top" style="background-color: #f0f4ff; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-globe-americas" style="font-size: 3rem; color: #4a6bdf;"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Tarea 3 - Cultura Digital</h5>
+                            <p class="card-text">Exploración de los valores y prácticas en la era digital según Ángel Campoy.</p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#pdfModal" data-pdf="t3.pdf">
+                                <i class="fas fa-eye me-2"></i>Ver Tarea
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tarjeta 4 -->
+                <div class="col">
+                    <div class="card catalog-card">
+                        <div class="card-img-top" style="background: linear-gradient(135deg, #DB2B39, #00249A, #2A2B2A); display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-palette" style="font-size: 3rem; color: white;"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Tarea 4 - Teoría de Color</h5>
+                            <p class="card-text">Práctica de diseño gráfico: Creación de marca StriveForce con paleta de colores.</p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#pdfModal" data-pdf="t4.pdf">
+                                <i class="fas fa-eye me-2"></i>Ver Tarea
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 5 - Triángulos (PDF t1.pdf) -->
+                <div class="col">
+                    <div class="card catalog-card">
+                        <div class="card-img-top" style="background: linear-gradient(135deg, #2c3e50, #3498db); display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-traffic-light" style="font-size: 3rem; color: white;"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Tarea 5 - Investigación de Tráfico</h5>
+                            <p class="card-text">Análisis comparativo: investigación explicativa vs aplicada sobre problemas de tráfico en Cd. Obregón.</p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#pdfModal" data-pdf="t5.pdf">
+                                <i class="fas fa-eye me-2"></i>Ver Tarea
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- falta -->
+                <!-- Tarjeta 6 -->
+                <div class="col">
+                    <div class="card catalog-card">
+                        <div class="card-img-top" style="background: linear-gradient(135deg, #f8d7da, #dc3545); display: flex; align-items: center; justify-content: center; height: 180px;">
+                            <i class="fas fa-exclamation-triangle" style="font-size: 3rem; color: #721c24;"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Tarea 6 -  Crear una Página Web sobre un Tema de Interés</h5>
+                            <p class="card-text">(Página no encontrada).</p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#htmlModal" data-html="cuatroscientoscuatro.html">
+                                <i class="fas fa-eye me-2"></i>Ver Página
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 7 - Triángulos (PDF t1.pdf) -->
+                <div class="col">
+                    <div class="card catalog-card">
+                        <div class="card-img-top" style="background: linear-gradient(135deg, #4CAF50, #8BC34A); display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-dumbbell" style="font-size: 3rem; color: white;"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Tarea 7 - Nutrición Deportiva</h5>
+                            <p class="card-text">Diseño web para "Strive Force": suplementos personalizados para atletas.</p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#pdfModal" data-pdf="t7.pdf">
+                                <i class="fas fa-eye me-2"></i>Ver Tarea
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- falta -->
+                <!-- Tarjeta 8 -->
+                <div class="col">
+                    <div class="card catalog-card">
+                        <div class="card-img-top" style="background: linear-gradient(135deg, #f8d7da, #dc3545); display: flex; align-items: center; justify-content: center; height: 180px;">
+                            <i class="fas fa-exclamation-triangle" style="font-size: 3rem; color: #721c24;"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Tarea 8 - Crear una Página Web Básica con HTML</h5>
+                            <p class="card-text">(Página no encontrada).</p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#htmlModal" data-html="cuatroscientoscuatro.html">
+                                <i class="fas fa-eye me-2"></i>Ver Página
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- falta -->
+                <!-- Tarjeta 9 -->
+                <div class="col">
+                    <div class="card catalog-card">
+                        <div class="card-img-top" style="background: linear-gradient(135deg, #f8d7da, #dc3545); display: flex; align-items: center; justify-content: center; height: 180px;">
+                            <i class="fas fa-exclamation-triangle" style="font-size: 3rem; color: #721c24;"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Tarea 9 - Agregar Estilos CSS3 a la Página Web</h5>
+                            <p class="card-text">(Página no encontrada).</p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#htmlModal" data-html="cuatroscientoscuatro.html">
+                                <i class="fas fa-eye me-2"></i>Ver Página
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Resto de tarjetas (2-17) -->
+                <!-- Tarjeta 10 -->
+                <div class="col">
+                    <div class="card catalog-card">
+                        <div class="card-img-top" style="background: linear-gradient(135deg, #6a11cb, #2575fc); display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-code" style="font-size: 3rem; color: white;"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Tarea 10 - Frameworks CSS</h5>
+                            <p class="card-text">Se presentan los styles utilizados en una página web.</p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#pdfModal" data-pdf="t10.pdf">
+                                <i class="fas fa-eye me-2"></i>Ver Tarea
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- falta -->                
+                <!-- Tarjeta 11 -->
+                <div class="col">
+                    <div class="card catalog-card">
+                        <div class="card-img-top" style="background: linear-gradient(135deg, #f8d7da, #dc3545); display: flex; align-items: center; justify-content: center; height: 180px;">
+                            <i class="fas fa-exclamation-triangle" style="font-size: 3rem; color: #721c24;"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Tarea 11 - Agregar un Menú Interactivo con JavaScript </h5>
+                            <p class="card-text">(Página no encontrada).</p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#htmlModal" data-html="cuatroscientoscuatro.html">
+                                <i class="fas fa-eye me-2"></i>Ver Página
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Resto de tarjetas (2-17) -->
+                <!-- Tarjeta 12 -->
+                <div class="col">
+                    <div class="card catalog-card">
+                        <div class="card-img-top" style="background: linear-gradient(135deg, #1e3c72, #2a5298); display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-futbol" style="font-size: 3rem; color: white;"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Tarea 12 - Mundo del Fútbol</h5>
+                            <p class="card-text">Diseño de página web especializada en noticias futbolísticas.</p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#pdfModal" data-pdf="t12.pdf">
+                                <i class="fas fa-eye me-2"></i>Ver Tarea
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 13 -->
+                <div class="col">
+                    <div class="card catalog-card">
+                        <div class="card-img-top" style="background: linear-gradient(to right, #005bbb, #ffd500); display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-futbol" style="font-size: 3rem; color: white; text-shadow: 0 0 5px rgba(0,0,0,0.3);"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Tarea 13 - Portal Futbolístico</h5>
+                            <p class="card-text">Diseño de web especializada en noticias, resultados y estadísticas de fútbol.</p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#pdfModal" data-pdf="t13.pdf">
+                                <i class="fas fa-eye me-2"></i>Ver Tarea
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tarjeta 14 -->
+                <div class="col">
+                    <div class="card catalog-card">
+                        <div class="card-img-top" style="background: linear-gradient(135deg, #563d7c, #6f42c1); display: flex; align-items: center; justify-content: center;">
+                            <i class="fab fa-css3-alt" style="font-size: 3rem; color: white;"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Tarea 14 - Estilos CSS</h5>
+                            <p class="card-text">Ejemplos prácticos de implementación de estilos CSS para páginas web.</p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#pdfModal" data-pdf="t14.pdf">
+                                <i class="fas fa-eye me-2"></i>Ver Tarea
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- falta -->
+                <!-- Tarjeta 15 -->
+                <div class="col">
+                    <div class="card catalog-card">
+                        <div class="card-img-top" style="background: linear-gradient(135deg, #f8d7da, #dc3545); display: flex; align-items: center; justify-content: center; height: 180px;">
+                            <i class="fas fa-exclamation-triangle" style="font-size: 3rem; color: #721c24;"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Tarea 15 - Formularios y Elementos de Entrada en HTML</h5>
+                            <p class="card-text">(Página no encontrada).</p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#htmlModal" data-html="cuatroscientoscuatro.html">
+                                <i class="fas fa-eye me-2"></i>Ver Página
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- falta -->
+                <!-- Tarjeta 16 -->
+                <div class="col">
+                    <div class="card catalog-card">
+                        <div class="card-img-top" style="background: linear-gradient(135deg, #f8d7da, #dc3545); display: flex; align-items: center; justify-content: center; height: 180px;">
+                            <i class="fas fa-exclamation-triangle" style="font-size: 3rem; color: #721c24;"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Tarea 16 - Video final</h5>
+                            <p class="card-text">(Página no encontrada).</p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#htmlModal" data-html="cuatroscientoscuatro.html">
+                                <i class="fas fa-eye me-2"></i>Ver Página
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal para visualizar PDFs -->
+    <div class="modal fade" id="pdfModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="pdfModalTitle">Visualizador de Tarea</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-info d-flex align-items-center" id="pdfAlert" style="display: none!important;">
+                        <i class="fas fa-info-circle me-2"></i>
+                        <span id="alertMessage">Si el PDF no se muestra correctamente, por favor utiliza el botón de descarga.</span>
+                    </div>
+                    <iframe id="pdfViewer" class="pdf-container" src="" frameborder="0"></iframe>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        <i class="fas fa-times me-2"></i>Cerrar
+                    </button>
+                    <a id="downloadPdf" href="#" class="btn btn-primary" download>
+                        <i class="fas fa-download me-2"></i>Descargar PDF
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Enlaces Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="acerca.html" class="text-white">Acerca de</a></li>
+                        <li><a href="catalogo.html" class="text-white">Catálogo</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Redes Sociales</h5>
+                    <a href="https://www.facebook.com/" class="text-white me-2" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/" class="text-white me-2" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/" class="text-white me-2" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/" class="text-white" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contacto</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-envelope me-2"></i> contacto@example.com</li>
+                        <li><i class="fas fa-phone me-2"></i> +123 456 7890</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="bg-light">
+            <p>&copy; 2025 Mi Portafolio. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <div class="modal fade" id="htmlModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="htmlModalTitle">Visualizador de Página Web</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <iframe id="htmlViewer" class="w-100" style="height: 70vh; border: none;" src=""></iframe>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        <i class="fas fa-times me-2"></i>Cerrar
+                    </button>
+                    <a id="viewFullPage" href="#" class="btn btn-primary" target="_blank">
+                        <i class="fas fa-external-link-alt me-2"></i>Ver página completa
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Script mejorado para manejar PDFs -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const pdfModal = document.getElementById('pdfModal');
+            const pdfAlert = document.getElementById('pdfAlert');
+            
+            pdfModal.addEventListener('show.bs.modal', function(event) {
+                const button = event.relatedTarget;
+                const pdfFile = button.getAttribute('data-pdf');
+                const title = button.closest('.card').querySelector('.card-title').textContent;
+                
+                const modalTitle = pdfModal.querySelector('.modal-title');
+                const pdfViewer = pdfModal.querySelector('#pdfViewer');
+                const downloadLink = pdfModal.querySelector('#downloadPdf');
+                
+                // Configurar modal
+                modalTitle.textContent = title;
+                downloadLink.href = pdfFile;
+                
+                // Mostrar alerta inicialmente
+                pdfAlert.style.display = 'flex';
+                
+                // Configurar iframe
+                pdfViewer.onload = function() {
+                    pdfAlert.style.display = 'none';
+                };
+                
+                pdfViewer.onerror = function() {
+                    pdfAlert.style.display = 'flex';
+                    document.getElementById('alertMessage').textContent = 
+                        'No se pudo cargar el PDF. Por favor, utiliza el botón de descarga.';
+                };
+                
+                // Cargar PDF
+                pdfViewer.src = pdfFile;
+                pdfViewer.style.display = 'block';
+            });
+            
+            pdfModal.addEventListener('hidden.bs.modal', function() {
+                const pdfViewer = pdfModal.querySelector('#pdfViewer');
+                pdfViewer.src = '';
+                pdfViewer.style.display = 'none';
+                pdfAlert.style.display = 'none';
+            });
+        });
+
+document.addEventListener('DOMContentLoaded', function() {
+    var htmlModal = document.getElementById('htmlModal');
+    
+    htmlModal.addEventListener('show.bs.modal', function(event) {
+        var button = event.relatedTarget;
+        var htmlFile = button.getAttribute('data-html');
+        var title = button.closest('.card').querySelector('.card-title').textContent;
+        
+        var modalTitle = htmlModal.querySelector('.modal-title');
+        var htmlViewer = htmlModal.querySelector('#htmlViewer');
+        var viewFullLink = htmlModal.querySelector('#viewFullPage');
+        
+        modalTitle.textContent = title;
+        htmlViewer.src = htmlFile;
+        viewFullLink.href = htmlFile;
+    });
+    
+    htmlModal.addEventListener('hidden.bs.modal', function() {
+        var htmlViewer = htmlModal.querySelector('#htmlViewer');
+        htmlViewer.src = '';
+    });
+});
+</script>
+
+
+
+</body>
+</html>

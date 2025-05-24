@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio - Recursos</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome (íconos) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --light-color: #ecf0f1;
+            --dark-color: #34495e;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--light-color);
+            color: var(--dark-color);
+        }
+        .navbar {
+            background-color: var(--secondary-color) !important;
+        }
+        .navbar-brand, .nav-link {
+            color: white !important;
+        }
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://via.placeholder.com/1920x600');
+            background-size: cover;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        .card {
+            transition: transform 0.3s;
+            margin-bottom: 20px;
+        }
+        .card:hover {
+            transform: scale(1.03);
+        }
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 30px 0;
+        }
+        .resource-card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .resource-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar con Menú Hamburguesa (idéntico al index.html) -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Mi Portafolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="acerca.html">Acerca de</a></li>
+                    <li class="nav-item"><a class="nav-link" href="catalogo.html">Catálogo</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="recursos.html">Recursos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section con título modificado para Recursos -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="display-4">Recursos Útiles</h1>
+            <p class="lead">Herramientas y materiales que utilizo en mis proyectos</p>
+        </div>
+    </section>
+
+    <!-- Contenido específico para Recursos -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card resource-card h-100">
+                        <div class="card-body text-center">
+                            <div class="resource-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h3>Herramientas de Desarrollo</h3>
+                            <ul class="text-start">
+                                <li>Visual Studio Code</li>
+                                <li>Git & GitHub</li>
+                                <li>Bootstrap 5</li>
+                                <li>React.js</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="card resource-card h-100">
+                        <div class="card-body text-center">
+                            <div class="resource-icon">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <h3>Diseño Gráfico</h3>
+                            <ul class="text-start">
+                                <li>Adobe Photoshop</li>
+                                <li>Adobe Illustrator</li>
+                                <li>Figma</li>
+                                <li>Canva</li>
+                                <li>Color Hunt</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="card resource-card h-100">
+                        <div class="card-body text-center">
+                            <div class="resource-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <h3>Recursos de Aprendizaje</h3>
+                            <ul class="text-start">
+                                <li>MDN Web Docs</li>
+                                <li>freeCodeCamp</li>
+                                <li>CSS-Tricks</li>
+                                <li>Stack Overflow</li>
+                                <li>YouTube Tutorials</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-4">
+                <div class="col-12">
+                    <div class="card resource-card">
+                        <div class="card-body">
+                            <h3 class="text-center mb-4">Enlaces Recomendados</h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h4><i class="fas fa-globe me-2"></i> Sitios Web</h4>
+                                    <ul>
+                                        <li><a href="https://developer.mozilla.org/" target="_blank">MDN Web Docs</a></li>
+                                        <li><a href="https://css-tricks.com/" target="_blank">CSS-Tricks</a></li>
+                                        <li><a href="https://www.freecodecamp.org/" target="_blank">freeCodeCamp</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <h4><i class="fas fa-video me-2"></i> Canales YouTube</h4>
+                                    <ul>
+                                        <li><a href="https://www.youtube.com/@FaztCode" target="_blank">Fazt Code</a></li>
+                                        <li><a href="https://www.youtube.com/@midudev" target="_blank">midudev</a></li>
+                                        <li><a href="https://www.youtube.com/@freecodecamp" target="_blank">freeCodeCamp</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (idéntico al index.html) -->
+    <footer class="text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Enlaces Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="acerca.html" class="text-white">Acerca de</a></li>
+                        <li><a href="catalogo.html" class="text-white">Catálogo</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Redes Sociales</h5>
+                    <a href="https://www.facebook.com/" class="text-white me-2" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/" class="text-white me-2" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/" class="text-white me-2" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/" class="text-white" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contacto</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-envelope me-2"></i> contacto@example.com</li>
+                        <li><i class="fas fa-phone me-2"></i> +123 456 7890</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="bg-light">
+            <p>&copy; 2025 Mi Portafolio. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
